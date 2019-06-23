@@ -4,13 +4,13 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/node": "^7.4.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "@babel/cli": "^7.4.4",
+    "@babel/node": "^7.4.5"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node main.js",
