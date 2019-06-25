@@ -1,0 +1,12 @@
+type Role {
+  _id: ID
+  name: String
+}
+
+type Mutation {
+  createRole(roleInput: CreateRoleInput) : Role
+}
+
+input CreateRoleInput {
+  name: String
+}
