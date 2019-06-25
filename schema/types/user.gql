@@ -2,9 +2,17 @@ type Query{
   message: String
 }
 type Mutation {
-  sayMyName(name: String!, id: Int!): User
+  createUser(userInput: UserInput): User
 }
 type User {
+  _id: ID
   name: String
-  id: ID
+  phone: String 
+  password: String 
+}
+
+input UserInput {
+  name: String 
+  phone: String 
+  password: String 
 }
