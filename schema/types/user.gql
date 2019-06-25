@@ -1,0 +1,10 @@
+type Query{
+  message: String
+}
+type Mutation {
+  sayMyName(name: String!, id: Int!): User
+}
+type User {
+  name: String
+  id: ID
+}

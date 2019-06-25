@@ -1,7 +1,21 @@
 import express from 'express';
-const app = express();
-const port = 3000;
+import graphqlHTTP from 'express-graphql';
+import { buildSchema } from 'graphql';
+import typeDefs from './schema/types/main';
+import resolvers from './schema/resolvers/main';
+require('dotenv').config()
 
-app.get('/', (req, res) => res.send('Hello World'));
+const app = express()
+const PORT = process.env.APP_PORT || 3000;
 
-app.listen(port, () => console.log(`App is running on port ${port}`))
+const schema = buildSchema(
+  typeDefs
+);
+
+app.use('/', graphqlHTTP({
+  schema: schema,
+  rootValue: resolvers,
+  graphiql: true
+}));
+
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
